@@ -102,3 +102,32 @@ sns.histplot(df["Age"], bins=20)
 plt.title("Age Distribution")
 plt.savefig("../images/age_distribution.png")
 plt.show()
+
+# Age vs Disease
+plt.figure(figsize=(10,6))
+sns.boxplot(x="Medical Condition", y="Age", data=df)
+plt.title("Age vs Disease")
+plt.xticks(rotation=45)
+plt.savefig("../images/age_vs_disease.png")
+plt.show()
+
+
+plt.figure(figsize=(8,6))
+sns.scatterplot(x="Stay Duration", y="Billing Amount", data=df)
+plt.title("Cost vs Stay Duration")
+plt.savefig("../images/cost_vs_stay.png")
+plt.show()
+
+
+high_risk = df[(df["Age"] > 60) & (df["Stay Duration"] > 10)]
+
+print("\nHigh Risk Patients Count:")
+print(high_risk.shape[0])
+
+
+costly_disease = df.groupby("Medical Condition")["Billing Amount"].mean().sort_values(ascending=False)
+
+print("\nTop Costly Diseases:")
+print(costly_disease)
+
+
