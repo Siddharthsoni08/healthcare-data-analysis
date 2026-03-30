@@ -88,3 +88,10 @@ This analysis can help hospitals:
 This project demonstrates how data analysis can be used to extract meaningful insights from healthcare data and support better decision-making.
 
 ---
+
+## 📊 Visualizations
+
+![Gender](images/gender_distribution.png)
+![Disease](images/disease_distribution.png)
+![Age](images/age_distribution.png)
+![Cost vs Stay](images/cost_vs_stay.png)
